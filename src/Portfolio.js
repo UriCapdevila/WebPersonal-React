@@ -1,39 +1,50 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
 import ProjectCard from './ProjectCard';
+import { Button, Row } from 'react-bootstrap';
 
 const projects = [
-  {
-    title: 'Proyecto 1',
-    description: 'Una breve descripción de mi primer proyecto.',
-    imgSrc: '/images/proyecto1.png',
-    link: '#'
+  { 
+    title: "Proyecto 1", 
+    description: "Descripción del proyecto 1", 
+    imgSrc: "https://picsum.photos/seed/project1/300/200",
+    link: "#" 
   },
-  {
-    title: 'Proyecto 2',
-    description: 'Una breve descripción de mi segundo proyecto.',
-    imgSrc: '/images/proyecto2.png',
-    link: '#'
+  { 
+    title: "Proyecto 2", 
+    description: "Descripción del proyecto 2", 
+    imgSrc: "https://picsum.photos/seed/project2/300/200",
+    link: "#" 
   },
-  {
-    title: 'Proyecto 3',
-    description: 'Una breve descripción de mi tercer proyecto.',
-    imgSrc: '/images/proyecto3.png',
-    link: '#'
-  }
+  { 
+    title: "Proyecto 3", 
+    description: "Descripción del proyecto 3", 
+    imgSrc: "https://picsum.photos/seed/project3/300/200",
+    link: "#" 
+  },
 ];
 
 const Portfolio = () => {
   return (
     <section id="portfolio" className="py-5">
-      <Container>
-        <h2 className="text-center mb-5">Portfolio</h2>
+      <div className="container">
+        <h2 className="text-center mb-4">Portfolio</h2>
         <Row>
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <ProjectCard 
+              key={index}
+              title={project.title} 
+              description={project.description} 
+              imgSrc={project.imgSrc} 
+              link={project.link} 
+            />
           ))}
         </Row>
-      </Container>
+        <div className="text-center mt-4">
+          <Button href="https://github.com/tu-usuario" target="_blank" variant="primary">
+            Ver portfolio completo
+          </Button>
+        </div>
+      </div>
     </section>
   );
 };

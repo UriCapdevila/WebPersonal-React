@@ -1,4 +1,33 @@
+/* General Light Theme Styles */
+body {
+  background-color: #f8f9fa; /* Almost white with a hint of blue */
+}
 
+/* Custom Navbar Style for Light Theme */
+.navbar-custom-light {
+  background-color: #add8e6; /* Pastel sky blue */
+}
+
+/* Custom Footer Style for Light Theme */
+.footer-custom-light {
+  background-color: #add8e6; /* Pastel sky blue */
+}
+
+.footer a {
+  color: #34495e; /* Dark blue-gray for contrast */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Sections background in Light Theme */
+.bg-light {
+  background-color: #ffffff !important; /* Pure white for clean contrast */
+}
+
+/* Profile Image and Social Media (no change) */
 .profile-image {
   width: 150px;
   height: 150px;
@@ -7,7 +36,7 @@
 }
 
 .social-media a {
-  margin-right: 15px;
+  margin: 0 10px;
 }
 
 .social-media img {
@@ -20,16 +49,31 @@
   transform: scale(1.2);
 }
 
+/* Custom Button Style for Light Theme */
 .btn-custom {
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: transparent;
+  border-color: #00BFFF;
+  color: #00BFFF;
 }
 
 .btn-custom:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  background-color: #00BFFF; /* Vibrant sky blue */
+  border-color: #00BFFF;
+  color: white;
 }
 
+/* Custom Button Style for Dark Theme */
+.btn-outline-light {
+  border-color: white;
+  color: white;
+}
+
+.btn-outline-light:hover {
+  background-color: white;
+  color: #34495e;
+}
+
+/* Card Styles (no change) */
 .card-skill {
   border: none;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -38,8 +82,4 @@
 
 .card-skill:hover {
   transform: translateY(-5px);
-}
-
-.bg-light {
-  background-color: #f8f9fa !important;
 }

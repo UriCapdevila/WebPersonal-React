@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import Header from './Header';
 import Biography from './Biography';
 import Portfolio from './Portfolio';
 import EducationExperience from './EducationExperience';
 import Skills from './Skills';
-import ContactForm from './ContactForm';
+import Footer from './Footer';
 import './App.css';
 import './DarkMode.css';
+import './Skills.css'; // Import skills styles
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -20,39 +21,15 @@ function App() {
   }, [theme]);
 
   return (
-    <div className={`App ${theme}`}>
-      <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-        <Container>
-          <Navbar.Brand href="#home">Uriel Capdevila</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
-              <Nav.Link href="#biografia">Biografía</Nav.Link>
-              <Nav.Link href="#portfolio">Portfolio</Nav.Link>
-              <Nav.Link href="#education-experience">Educación y Experiencia</Nav.Link>
-              <Nav.Link href="#skills">Habilidades</Nav.Link>
-              <Nav.Link href="#contact">Contacto</Nav.Link>
-              <Button onClick={toggleTheme} variant="outline-light">
-                {theme === 'light' ? 'Modo Oscuro' : 'Modo Claro'}
-              </Button>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
-      <main>
+    <div>
+      <Header theme={theme} toggleTheme={toggleTheme} />
+      <main className="container mt-4">
         <Biography />
         <Portfolio />
-        <EducationExperience />
         <Skills />
-        <ContactForm />
+        <EducationExperience />
       </main>
-
-      <footer className="bg-dark text-white text-center py-3">
-        <Container>
-          <p>&copy; 2024 Uriel Capdevila. Todos los derechos reservados.</p>
-        </Container>
-      </footer>
+      <Footer theme={theme} />
     </div>
   );
 }

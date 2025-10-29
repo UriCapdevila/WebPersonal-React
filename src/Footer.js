@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = ({ theme }) => {
   return (
-    <footer className="footer py-3">
+    <footer className={`footer py-3 ${theme === 'light' ? 'footer-custom-light' : 'bg-dark'}`}>
       <div className="container">
         <div className="row">
           <div className="col-md-4">

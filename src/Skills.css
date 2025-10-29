@@ -1,0 +1,15 @@
+.card-skill {
+  background-color: #afeeee; /* Pale turquoise, like aqua green */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  height: 100%; /* Ensure all cards have the same height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-skill:hover {
+  transform: translateY(-5px);
+}
