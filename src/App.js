@@ -1,15 +1,26 @@
-import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import Biography from './Biography';
 import Portfolio from './Portfolio';
 import EducationExperience from './EducationExperience';
 import Skills from './Skills';
 import ContactForm from './ContactForm';
 import './App.css';
+import './DarkMode.css';
 
 function App() {
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   return (
-    <div>
+    <div className={`App ${theme}`}>
       <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
         <Container>
           <Navbar.Brand href="#home">Uriel Capdevila</Navbar.Brand>
@@ -21,6 +32,9 @@ function App() {
               <Nav.Link href="#education-experience">Educación y Experiencia</Nav.Link>
               <Nav.Link href="#skills">Habilidades</Nav.Link>
               <Nav.Link href="#contact">Contacto</Nav.Link>
+              <Button onClick={toggleTheme} variant="outline-light">
+                {theme === 'light' ? 'Modo Oscuro' : 'Modo Claro'}
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>

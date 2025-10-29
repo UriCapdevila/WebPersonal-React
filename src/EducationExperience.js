@@ -27,7 +27,7 @@ const EducationExperience = () => {
                 <Card.Subtitle className="mb-2 text-muted">2023 - Presente</Card.Subtitle>
                 <Card.Text>
                   Creación de sitios web y aplicaciones para clientes, enfocado en soluciones a medida y experiencias de usuario de alta calidad.
-                </card.Text>
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
