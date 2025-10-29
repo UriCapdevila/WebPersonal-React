@@ -1,38 +1,317 @@
-.App {
+/* Reset y variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #f0f4f8;
+  --text-color: #2e2e2e;
+  --accent-color: #e8f0fe;
+  --accent-rgb: 232, 240, 254;
+  --card-color: #fdf6f0;
+  --highlight-color: #a3c4f3;
+  --footer-bg: #f0f4f8;
+  --footer-text: #4a4a4a;
+  --shadow-light: 0 4px 8px rgba(0,0,0,0.1);
+  --shadow-dark: 0 8px 16px rgba(255,255,255,0.1);
+  --radius-soft: 10px;
+}
+
+.dark-mode {
+  --bg-color: #131212;
+  --text-color: #dcdcdc;
+  --accent-color: #161b22;
+  --accent-rgb: 22, 27, 34;
+  --card-color: #2a2f3a;
+  --highlight-color: #8ab4f8;
+  --footer-bg: #1c1c1c;
+  --footer-text: #a0a0a0;
+}
+
+/* Global */
+
+body, html {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+}
+
+/* Secciones */
+section {
+  width: 100%;
+  min-height: auto;
+  padding: 60px 60px;
+  background-color: rgba(var(--accent-rgb), 0.95);
+  color: var(--text-color);
+  backdrop-filter: blur(2px);
+  scroll-margin-top: 76px; /* Compensa la altura del navbar fijo */
+}
+
+/* Eliminar pseudo-elemento innecesario */
+section:target::before {
+  content: none;
+  display: none;
+}
+
+/* Navbar */
+header {
+  background-color: var(--accent-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  color: var(--text-color);
+}
+
+.navbar {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  min-height: 56px;
+}
+
+.navbar-brand {
+  font-size: 1.1rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.navbar-nav .nav-link {
+  display: block;
+  min-width: 100px;
+  max-width: 180px;
   text-align: center;
+  padding: 6px 10px;
+  margin: 0 4px;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-nav .nav-link:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--text-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.dark-mode .navbar,
+.dark-mode .navbar-nav .nav-link,
+.dark-mode .navbar-brand {
+  color: var(--text-color) !important;
+  border-color: var(--text-color) !important;
+}
+
+.dark-mode .navbar-nav .nav-link:hover {
+  background-color: var(--highlight-color);
+  color: var(--bg-color);
+  border-color: var(--highlight-color);
+}
+/* Toggle modo oscuro */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input { display: none; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px; width: 18px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--highlight-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+#darkModeLabel {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: var(--highlight-color);
+  color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.dark-mode #darkModeLabel {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+/* Contenedor */
+
+.container {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Biografía */
+
+.profile-image {
+  max-width: 100%;
+  border-radius: 50%;
+  box-shadow: var(--shadow-light);
+}
+
+.profile-responsive {
+  width: 75%;
+}
+
+@media (min-width: 768px) {
+  .profile-responsive {
+    width: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.social-media img {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.social-media img:hover {
+  transform: scale(1.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Skills */
+
+#skills h2 {
+  color: var(--bg-color);
+}
+
+.card-skill {
+  background-color: var(--card-color);
+  border: none;
+  border-radius: var(--radius-soft);
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-skill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .card-skill:hover {
+  box-shadow: var(--shadow-dark);
+}
+
+.card-skill .card-title {
+  color: var(--text-color);
+}
+
+/* Educación y Experiencia */
+
+#education-experience h2 {
+  margin-bottom: 60px;
+}
+
+#education-experience h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.item {
+  background-color: var(--card-color);
+  border-radius: var(--radius-soft);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-light);
+}
+
+.item h4 {
+  color: var(--text-color);
+}
+
+/* Botones */
+
+.btn-custom {
+  background-color: var(--card-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+
+}
+
+.btn-custom:hover {
+  background-color: var(--text-color);
+  color: var(--highlight-color);
+  transform: scale(1.05);
+  text-decoration: none;
+
+}
+
+/* Footer */
+
+footer {
+  background-color: var(--bg-color);
+  color: var(--footer-text);
+  padding: 40px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 8px 16px rgba(0, 0, 0, 0.03);
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.dark-mode footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 8px 16px rgba(255, 255, 255, 0.03);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  .navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
+  .navbar-nav .nav-link {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
   }
 }
