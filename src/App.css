@@ -1,20 +1,24 @@
 /* General Light Theme Styles */
-body {
-  background-color: #f8f9fa; /* Almost white with a hint of blue */
+body.light {
+  background: linear-gradient(to bottom, #E0F2F1, #FFFFFF);
+}
+
+.light .bg-light {
+  background-color: transparent !important;
 }
 
 /* Custom Navbar Style for Light Theme */
 .navbar-custom-light {
-  background-color: #add8e6; /* Pastel sky blue */
+  background-color: #B2DFDB; /* Lighter mint from palette */
 }
 
 /* Custom Footer Style for Light Theme */
 .footer-custom-light {
-  background-color: #add8e6; /* Pastel sky blue */
+  background-color: #B2DFDB; /* Lighter mint from palette */
 }
 
 .footer a {
-  color: #34495e; /* Dark blue-gray for contrast */
+  color: #00796B; /* Darker teal from palette */
   text-decoration: none;
 }
 
@@ -23,14 +27,11 @@ body {
 }
 
 /* Sections background in Light Theme */
-.bg-light {
-  background-color: #ffffff !important; /* Pure white for clean contrast */
-}
 
 /* Profile Image and Social Media (no change) */
 .profile-image {
-  width: 150px;
-  height: 150px;
+  width: 280px;
+  height: 280px;
   border: 3px solid #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
@@ -52,13 +53,13 @@ body {
 /* Custom Button Style for Light Theme */
 .btn-custom {
   background-color: transparent;
-  border-color: #00BFFF;
-  color: #00BFFF;
+  border-color: #00796B; /* Darker teal from palette */
+  color: #00796B;
 }
 
 .btn-custom:hover {
-  background-color: #00BFFF; /* Vibrant sky blue */
-  border-color: #00BFFF;
+  background-color: #00796B; /* Darker teal from palette */
+  border-color: #00796B;
   color: white;
 }
 

@@ -8,7 +8,7 @@ const EducationExperience = () => {
         <h2 className="text-center mb-5">Educación y Experiencia</h2>
         <Row>
           <Col md={6}>
-            <h3>Educación</h3>
+            <h3 className="text-center">Educación</h3>
             <Card className="mb-4">
               <Card.Body>
                 <Card.Title>Desarrollo Web Full Stack</Card.Title>
@@ -20,7 +20,7 @@ const EducationExperience = () => {
             </Card>
           </Col>
           <Col md={6}>
-            <h3>Experiencia</h3>
+            <h3 className="text-center">Experiencia</h3>
             <Card className="mb-4">
               <Card.Body>
                 <Card.Title>Desarrollador Web Freelance</Card.Title>

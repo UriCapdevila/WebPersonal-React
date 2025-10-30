@@ -1,6 +1,6 @@
 /* Dark Mode Styles */
 body.dark {
-  background-color: #121212;
+  background: linear-gradient(to bottom, #1c1c1c, #121212);
   color: #ffffff;
 }
 
@@ -18,7 +18,7 @@ body.dark {
 }
 
 .dark .bg-light {
-  background-color: #1c1c1c !important;
+  background-color: transparent !important;
 }
 
 .dark .card-skill {
@@ -27,13 +27,13 @@ body.dark {
 }
 
 /* Theme Toggle Button in Dark Mode */
-.dark .theme-toggle-button {
+.dark .theme-toggle-button, .dark .btn-custom {
   background-color: transparent;
   border-color: #6495ED; /* Softer cornflower blue */
   color: #6495ED;
 }
 
-.dark .theme-toggle-button:hover {
+.dark .theme-toggle-button:hover, .dark .btn-custom:hover {
   background-color: #6495ED;
   border-color: #6495ED;
   color: white;
